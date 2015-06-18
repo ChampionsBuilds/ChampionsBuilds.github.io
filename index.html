@@ -226,32 +226,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="#"><i class="icon8"></i></a>
 			</div>
 			-->
+			<form id="fr1" >
 			<div class="contact">
 			<div class="contact-grids">
 			<div class="col-md-4 contactgrid">
-				<input type="text" class="text" value=" name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' name';}">
-				</div>
-				<div class="col-md-4 contactgrid">
-				<input type="text" class="text" value="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}">
-				</div>
 				
-				<div class="clearfix"></div>
-				</div>
-				<div class="contact-grids1">
-				<div class="col-md-8 contactgrid1">
-				<textarea onfocus="if(this.value == 'Your Message') this.value='';" onblur="if(this.value == '') this.value='Your Message';" >Your Message</textarea>
-				</div>
-				<div class="col-md-4 contactgrid2">
+					<input id="tbName" type="text" class="text" value=" name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' name';}">
+					</div>
+					<div class="col-md-4 contactgrid">
+					<input id="tbMail" type="text" class="text" value="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}">
+					</div>
+					
+					<div class="clearfix"></div>
+					</div>
+					<div class="contact-grids1">
+					<div class="col-md-8 contactgrid1">
+					<textarea id="tbMessage" onfocus="if(this.value == 'Your Message') this.value='';" onblur="if(this.value == '') this.value='Your Message';" >Your Message</textarea>
+					</div>
+					<div class="col-md-4 contactgrid2">
+					
+					
+					<input id="bt1" type="button" value="[ send message ]">
 				
-				<form method="post" action="mailto:lolchampionsbuilds@gmail.com" >
-				<input type="button" value="[ send message ]">
-				</form>
 				
 			   </div>
 			   <div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
 				</div>
+				</form>
 				<div class="footer-bottom">
 
 					<p> Copyright &copy;2015  All rights  Reserved</p>
@@ -269,6 +272,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							*/
 							
 							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+							$('#bt1').click(function() {
+								$('#fr1').attr('action',
+											   'lolchampionsbuilds@gmail.com?subject="Why do you want to contact me ?"
+											   +
+											    '&body=' + $('#tbMessage').val());
+								$('#fr1').submit();
+							});
 							
 						});
 					</script>
